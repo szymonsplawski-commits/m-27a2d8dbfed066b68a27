@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,6 +7,7 @@
 <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="bingbot" content="noindex,nofollow,noarchive,nosnippet">
 <meta name="referrer" content="no-referrer">
+<style>.lang{display:none!important}</style>
 </head>
 <body>
 <title>The Moment</title>
@@ -855,9 +856,7 @@ html.rv [data-r].in{opacity:1;transform:none}
 
 <script>
 (function(){
-  var lang="pl";
-  try{var s=localStorage.getItem("tm-lang"); if(s==="en"||s==="pl") lang=s;}catch(e){}
-  try{if((location.hash||"").toLowerCase()==="#en") lang="en";}catch(e){}
+  var lang="en";
   var reduce=!!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   var hasIO="IntersectionObserver" in window;
   function L(o){return o?(o[lang]!==undefined?o[lang]:o.pl):"";}
@@ -1013,7 +1012,7 @@ html.rv [data-r].in{opacity:1;transform:none}
 
   /* ---------- Język ---------- */
   function setLang(l){
-    lang=l; try{localStorage.setItem("tm-lang",l);}catch(e){}
+    lang=l;
     document.documentElement.setAttribute("data-lang",l); document.documentElement.setAttribute("lang",l);
     document.getElementById("lang-pl").setAttribute("aria-pressed",l==="pl"?"true":"false");
     document.getElementById("lang-en").setAttribute("aria-pressed",l==="en"?"true":"false");
